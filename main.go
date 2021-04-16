@@ -1,10 +1,8 @@
 package main
 
-import (
-	"go_debug/pkgs/interfaceRel"
-)
+import "go_debug/pkgs/funcRel"
 
 func main() {
 	println("ok")
-	interfaceRel.InterfaceTest3()
+	funcRel.FuncTest2()
 }
