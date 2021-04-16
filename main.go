@@ -6,6 +6,6 @@ import (
 
 func main()  {
 	println("ok")
-	fmtPrt.Test1()
+	fmtPrt.Test2()
 }
 
