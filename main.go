@@ -1,11 +1,10 @@
 package main
 
 import (
-	"go_debug/pkgs/fmtPrt"
+	"go_debug/pkgs/interfaceRel"
 )
 
-func main()  {
+func main() {
 	println("ok")
-	fmtPrt.SWTest3()
+	interfaceRel.InterfaceTest3()
 }
-
