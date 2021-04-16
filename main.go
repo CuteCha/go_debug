@@ -6,6 +6,6 @@ import (
 
 func main()  {
 	println("ok")
-	fmtPrt.Test3()
+	fmtPrt.SWTest3()
 }
 
