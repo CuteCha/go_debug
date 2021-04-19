@@ -1,8 +1,10 @@
 package main
 
-import "go_debug/pkgs/funcRel"
+import (
+	"go_debug/pkgs/pointerRel"
+)
 
 func main() {
 	println("ok")
-	funcRel.FuncTest2()
+	pointerRel.PointerTest1()
 }
