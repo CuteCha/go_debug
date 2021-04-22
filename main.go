@@ -1,10 +1,10 @@
 package main
 
 import (
-	"go_debug/pkgs/pointerRel"
+	"go_debug/pkgs/loopRel"
 )
 
 func main() {
 	println("ok")
-	pointerRel.PointerTest1()
+	loopRel.ForTest1()
 }
