@@ -1,10 +1,8 @@
 package main
 
-import (
-	"go_debug/pkgs/loopRel"
-)
+import "go_debug/pkgs/objectRel"
 
 func main() {
 	println("ok")
-	loopRel.ForTest1()
+	objectRel.AddAttrTest1()
 }
