@@ -93,5 +93,10 @@ def _tensordot_np_test():
     print(C)
 
 
+def _dict_get_value():
+    d = {"a": 1, "b": 2}
+    print(d.get("c", 3))  # print(d["c"] or 3)
+
+
 if __name__ == '__main__':
-    _tensordot_np_test()
+    _dict_get_value()
