@@ -1,8 +1,10 @@
 package main
 
-import "go_debug/pkgs/objectRel"
+import (
+	"go_debug/pkgs/pointerRel"
+)
 
 func main() {
 	println("ok")
-	objectRel.AddAttrTest1()
+	pointerRel.PointerTest22()
 }
