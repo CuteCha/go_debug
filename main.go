@@ -1,10 +1,10 @@
 package main
 
 import (
-	"go_debug/pkgs/pointerRel"
+	"go_debug/pkgs/viperRel"
 )
 
 func main() {
 	println("ok")
-	pointerRel.PointerTest22()
+	viperRel.ViperJsonTest13()
 }
