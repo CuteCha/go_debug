@@ -5,6 +5,7 @@ import (
 	json "github.com/json-iterator/go"
 	"github.com/spf13/pflag"
 	"github.com/spf13/viper"
+	"time"
 )
 
 type UserInfo struct {
@@ -85,6 +86,46 @@ func ViperJsonTest13() {
 	}
 	fmt.Println("read config3.json")
 	fmt.Println("config: ", viperJsonConfig, "redis: ", viperJsonConfig.Redis)
+	fmt.Println(viperJsonConfig)
+
+	if viperJson, err := json.MarshalToString(viperJsonConfig); err == nil {
+		fmt.Println(viperJson)
+	} else {
+		fmt.Println(err.Error())
+	}
+
+}
+
+type AppSetting struct {
+	CacheMap map[string]CacheConf
+}
+
+type CacheConf struct {
+	MaxSize       int
+	EmptyDuration time.Duration
+	Duration      time.Duration
+	Param         map[string]interface{}
+}
+
+
+func ViperJsonTest14() {
+	vjson := viper.New()
+	vjson.AddConfigPath("./conf/json")
+	vjson.SetConfigName("config3")
+	vjson.SetConfigType("json")
+
+	if err := vjson.ReadInConfig(); err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	var viperJsonConfig AppSetting
+	err := vjson.Unmarshal(&viperJsonConfig)
+	if err != nil {
+		return
+	}
+	fmt.Println("read config3.json")
+	fmt.Println("config: ", viperJsonConfig)
 	fmt.Println(viperJsonConfig)
 
 	if viperJson, err := json.MarshalToString(viperJsonConfig); err == nil {

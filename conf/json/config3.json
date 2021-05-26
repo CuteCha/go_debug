@@ -1,0 +1,16 @@
+{
+  "CacheMap": {
+    "online_lives_cache": {
+      "MaxSize": 100000,
+      "EmptyDuration": "600s",
+      "Duration": "3600s",
+      "Param": {}
+    },
+    "live_tags_cache": {
+      "MaxSize": 100000,
+      "EmptyDuration": "600s",
+      "Duration": "3600s",
+      "Param": {}
+    }
+  }
+}

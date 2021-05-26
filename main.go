@@ -1,8 +1,8 @@
 package main
 
-import "go_debug/pkgs/trickerRel"
+import "go_debug/pkgs/viperRel"
 
 func main() {
 	println("ok")
-	trickerRel.Test01()
+	viperRel.ViperJsonTest14()
 }
