@@ -33,7 +33,7 @@ type ExpConfig struct {
 
 func Test02(t *testing.T) {
 	vjson := viper.New()
-	vjson.AddConfigPath("/Users/checao/workflow/go_debug/conf/json")
+	vjson.AddConfigPath("../../conf/json")
 	vjson.SetConfigName("config4")
 	vjson.SetConfigType("json")
 
@@ -139,4 +139,32 @@ func Test04(t *testing.T) {
 	jsonExample := []byte(`{"port": 10666,"mysql": {"url": "(127.0.0.1:3306)/biezhi","username": "root","password": "123456"},"redis": ["127.0.0.1:6377", "127.0.0.1:6378", "127.0.0.1:6379"],"smtp": {"enable": true,"addr": "mail_addr","username": "mail_user","password": "mail_password","to": ["xxx@gmail.com", "xxx@163.com"]}}`)
 	b, _ := prettyPrint(jsonExample)
 	fmt.Printf("%s", b)
+}
+
+func Test05(t *testing.T) {
+	var TowerConf map[string]interface{}
+	towers := viper.New()
+	towers.AddConfigPath("../../conf/json")
+	towers.SetConfigName("config5")
+	if pe := towers.ReadInConfig(); pe != nil {
+		t.Fatalf("Read towers config from path: config5, file name: tower failed: %v", pe)
+	} else {
+		t.Logf("Read towers config from path: %s with name: %s file: %+v", "conf/json", "config5", towers)
+	}
+	TowerConf = towers.AllSettings()
+	for k, v := range TowerConf {
+		t.Logf("%s: %+v\n", k, v)
+	}
+
+	if v, found := TowerConf["flows"]; found {
+		if x, ok := v.(interface{}); ok {
+			t.Log(x)
+		}
+	}
+
+	if str, err := json.MarshalToString(TowerConf); err == nil {
+		t.Log(str)
+	} else {
+		t.Fatalf(err.Error())
+	}
 }

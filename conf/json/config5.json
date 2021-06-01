@@ -1,0 +1,51 @@
+{
+  "flows": {
+    "hash_size": 10000,
+    "hash_key": 1,
+    "hash_fun": 2,
+    "max_size": 500,
+    "h_exp": {
+      "110573677": "alg",
+      "man_test": "man",
+      "hot_test": "hot"
+    },
+    "exp": [
+      {
+        "exp_id": "default",
+        "exp_name": "feeds_default",
+        "exp_desc": "alg",
+        "flow": 7000,
+        "param": {
+          "tower": "alg"
+        }
+      },
+      {
+        "exp_id": "hot",
+        "exp_name": "feeds_hot",
+        "exp_desc": "hot",
+        "flow": 1000,
+        "param": {
+          "tower": "hot"
+        }
+      },
+      {
+        "exp_id": "man",
+        "exp_name": "feeds_man",
+        "exp_desc": "man",
+        "flow": 1000,
+        "param": {
+          "tower": "man"
+        }
+      },
+      {
+        "exp_id": "alg",
+        "exp_name": "feeds_alg",
+        "exp_desc": "alg",
+        "flow": 1000,
+        "param": {
+          "tower": "alg"
+        }
+      }
+    ]
+  }
+}
