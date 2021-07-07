@@ -12,7 +12,7 @@ import (
 )
 
 func Test01(t *testing.T) {
-	s := "cxq123"
+	s := "xxx123"
 	seed := uint32(127)
 	hash := murmur3.New64WithSeed(seed)
 	hash.Write([]byte(s))
@@ -36,7 +36,7 @@ func Test01(t *testing.T) {
 }
 
 func Test02(t *testing.T) {
-	s := "cxq123"
+	s := "xxx123"
 	seed := uint32(127)
 	hash := md5.New()
 	hash.Write([]byte(s))
@@ -47,7 +47,7 @@ func Test02(t *testing.T) {
 }
 
 func Test03(t *testing.T) {
-	s := "cxq123"
+	s := "xxx123"
 	//seed := uint32(127)
 	t.Log(murmur32(s))
 	t.Log(murmur64(s))
