@@ -64,7 +64,7 @@ func Test04(t *testing.T) {
 	var bucketMap = map[uint64]int{}
 	var bucketMapFloat = map[uint64]float64{}
 	for i := 15000000000; i < 15000000000+N; i++ {
-		hashInt := murmur64WithSeed(fmt.Sprint(i), 129) % uint64(bucketSize)
+		hashInt := murmur64WithSeed(fmt.Sprint(i), 127) % uint64(bucketSize)
 		bucketMap[hashInt]++
 	}
 	fmt.Println(bucketMap)
