@@ -29,3 +29,27 @@ func Test02(t *testing.T) {
 
 	fmt.Printf("result: %v\n", result)
 }
+
+type TestSlicePair struct {
+	Id     string
+	Weight int32
+}
+
+func Test03(t *testing.T) {
+	result := make([]*TestSlicePair, 0)
+	result = append(result, &TestSlicePair{Id: "a", Weight: 1}, &TestSlicePair{Id: "b", Weight: 5}, &TestSlicePair{Id: "c", Weight: 3}, &TestSlicePair{Id: "d", Weight: 2})
+	fmt.Printf("result: \n")
+	for _, item := range result {
+		fmt.Printf("%v; ", *item)
+	}
+	fmt.Printf("\n")
+
+	sort.Slice(result, func(i, j int) bool {
+		return result[i].Weight > result[j].Weight
+	})
+
+	for _, item := range result {
+		fmt.Printf("%v; ", *item)
+	}
+	fmt.Printf("\n")
+}
