@@ -42,7 +42,7 @@ func Test03(t *testing.T) {
 	for _, item := range result {
 		fmt.Printf("%v; ", *item)
 	}
-	fmt.Printf("\n")
+	fmt.Printf("\nsorted: \n")
 
 	sort.Slice(result, func(i, j int) bool {
 		return result[i].Weight > result[j].Weight
