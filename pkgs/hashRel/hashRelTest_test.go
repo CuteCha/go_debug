@@ -55,6 +55,17 @@ func Test03(t *testing.T) {
 	t.Log(murmur64(s))
 	t.Log(murmur64WithSeed(s, 123))
 	t.Log(murmur64WithSeed(s, 127))
+	t.Log(murmur32WithSeed(s, 97))
+	t.Log(MurmurHash64A(s))
+}
+
+func Test031(t *testing.T) {
+	lst:=[] string {"python","golang","scala","java","c++","c","123"}
+	for _,s :=range lst{
+		fmt.Printf("%v: %v\n", s, MurmurHash64A(s))
+	}
+	//s := "xxx123"
+	//t.Log(MurmurHash64A(s))
 }
 
 func Test04(t *testing.T) {
@@ -145,6 +156,10 @@ func sha1Hash(str string) [20]byte {
 
 func murmur32(str string) uint32 {
 	return murmur3.Sum32([]byte(str))
+}
+
+func murmur32WithSeed(str string, seed uint32) uint32 {
+	return murmur3.Sum32WithSeed([]byte(str), seed)
 }
 
 func murmur64(str string) uint64 {
