@@ -4,6 +4,7 @@ const (
 	BIG_M = 0xc6a4a7935bd1e995
 	BIG_R = 47
 	SEED = 0xe17a1465
+	N = 32
 )
 
 
@@ -55,4 +56,13 @@ func MurmurHash64A(str string) int64 {
 	h ^= int64(uint64(h) >> BIG_R)
 
 	return h
+}
+
+func NumHash(str string) int32 {
+	var v = MurmurHash64A(str)
+	if v < 0 {
+		v = -v
+	}
+
+	return int32(v >> N)
 }

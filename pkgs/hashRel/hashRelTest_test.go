@@ -64,6 +64,11 @@ func Test031(t *testing.T) {
 	for _,s :=range lst{
 		fmt.Printf("%v: %v\n", s, MurmurHash64A(s))
 	}
+	fmt.Println("--------------------------------------")
+	for _,s :=range lst{
+		fmt.Printf("%v: %v\n", s, NumHash(s))
+	}
+
 	//s := "xxx123"
 	//t.Log(MurmurHash64A(s))
 }
