@@ -3,7 +3,7 @@ package hashRel
 const (
 	BIG_M = 0xc6a4a7935bd1e995
 	BIG_R = 47
-	SEED = 0x1234ABCD
+	SEED = 0xe17a1465
 )
 
 
